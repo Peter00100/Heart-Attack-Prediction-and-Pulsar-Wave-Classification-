@@ -1,0 +1,163 @@
+{% extends 'Index.html' %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap');
+
+    body {
+        background-image: url('https://physicsworld.com/wp-content/uploads/2023/06/NANOGrav_PTA_GWB_15yr_wide.jpg');
+        
+        
+    }
+
+    .container {
+        padding: 10%;
+        padding-top: 0%;
+    }
+
+    table {
+        position: relative;
+        top: 20px
+    }
+
+    td,
+    th {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+
+    }
+    h4{
+        font-family: 'Lugrasimo', cursive;
+    }
+
+    h2 {
+        padding: 2%;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        text-shadow: 5px;
+        font-family: 'Lugrasimo', cursive;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 1.5;
+    }
+    h2:hover{
+        transform: rotateX(720deg) scale(1.2); 
+        transition: all 2s ease;
+        
+    }
+
+
+    input[text] {
+        width: 300px
+    }
+
+    input[text] {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 10px;
+    }
+</style>
+<div class="container" style="padding: 10%;padding-top: 0%;">
+    <form method="POST">
+        {% csrf_token %}
+        <center>
+            <div class="container">
+                <table class=" my-1">
+                    
+                    
+
+                    <tr>
+                        <th colspan="2">
+                            <h2>Pulsar Classification</h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control " id="floatingInput" name="txtmiv"
+                                    placeholder="Enter Mean Integrated value">
+                                <label for="floatingInput" style="color: black;">Enter Mean Integrated value</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtsd"
+                                    placeholder="Enter  SD">
+                                <label for="floatingInput" style="color: black;">Enter SD value</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtek"
+                                    placeholder="Enter  SD">
+                                <label for="floatingInput" style="color: black;">Enter EK value</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtSkew"
+                                    placeholder="Enter Mean Skewness">
+                                <label for="floatingInput" style="color: black;">Enter Mean Skewness value</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtmdc"
+                                    placeholder="Enter Mean DMSNR Curve">
+                                <label for="floatingInput" style="color: black;">Enter Mean DMSNR Curve value</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtsdc"
+                                    placeholder="Enter SD DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter SD DMSNR Curve value</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtedc"
+                                    placeholder="Enter EK DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter EK DMSNR Curve value</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" id="floatingInput" name="txtSkewdc"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Skewness DMSNR Curve value</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <button type="submit" size="160" name="submit" class="btn btn-outline-light btn-lg"
+                                style="position: relative;">Predict</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h4 style="color: white; font-weight: bolder;">{{ result }}</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h4 style="color: white; font-weight: bolder;"> {{ accuracy }}</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+    </form>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+
+    /* @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,500&display=swap'); */
+    body{
+      font-family: 'Prompt', sans-serif;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .container-fluid:hover img{
+      transform:rotateY(180deg) scale(1.4); 
+      transition: all 2s ease;
+      cursor: pointer;
+    }
+    button:hover{
+      transition: all 1s ease;
+    }

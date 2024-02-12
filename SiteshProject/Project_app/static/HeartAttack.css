@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap');
+
+body {
+    background-image: url('https://cdn-prod.medicalnewstoday.com/content/images/articles/323/323451/concept-image-illustrating-a-heart-attack.jpg');
+    
+}
+
+.container {
+    padding: 10%;
+    padding-top: 0%;
+}
+
+table {
+    position: relative;
+    top: 20px
+}
+
+h4 {
+    font-family: 'Source Code Pro', monospace;
+    
+}
+
+h2 {
+    padding: 2%;
+    text-align: center;
+    color: white;
+    text-shadow: 5px;
+    font-family: 'Lugrasimo', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5;
+}
+h2:hover{
+    transform: rotateX(720deg) scale(1.2); 
+    transition: all 2s ease;
+}
+
+td,
+th {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+
+}

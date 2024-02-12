@@ -1,0 +1,147 @@
+{% extends 'Index.html' %}
+{% block content %}
+
+
+<div class="container">
+
+    <form method="POST">
+
+        {% csrf_token %}
+        <div class="container">
+            <center>
+                <table class="   my-1">
+
+
+                    <tr>
+                        <th colspan="2">
+                            <h2>Heart Attack Prediction</h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" size="75" class="form-control" class="floatingInput" name="txt1"
+                                    placeholder="Enter Mean Integrated value">
+                                <label for="floatingInput" style="color: black;">Enter Age</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3 mx-4">
+                                <input type="text" size="75" class="form-control" class="floatingInput" name="txt2"
+                                    placeholder="Enter  SD">
+                                <label for="floatingInput" style="color: black;">Enter Sex</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" class="floatingInput" name="txt3"
+                                    placeholder="Enter  SD">
+                                <label for="floatingInput" style="color: black;">Enter CP value</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3 mx-4">
+                                <input type="text" class="form-control" class="floatingInput" name="txt4"
+                                    placeholder="Enter Mean Skewness">
+                                <label for="floatingInput" style="color: black;">Enter Trestbps value</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" class="floatingInput" name="txt5"
+                                    placeholder="Enter Mean DMSNR Curve">
+                                <label for="floatingInput" style="color: black;">Enter Chol</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3 mx-4">
+                                <input type="text" class="form-control" class="floatingInput" name="txt6"
+                                    placeholder="Enter SD DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter FBS</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" class="floatingInput" name="txt7"
+                                    placeholder="Enter EK DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Restecg</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3 mx-4">
+                                <input type="text" class="form-control" class="floatingInput" name="txt8"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Thalach</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" class="floatingInput" name="txt9"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Exang value</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3 mx-4">
+                                <input type="text" class="form-control" class="floatingInput" name="txt10"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Oldpeak</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" class="floatingInput" name="txt11"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Slope</label>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-floating mb-3 mx-4">
+                                <input type="text" class="form-control" class="floatingInput" name="txt12"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter CA value</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <div class="form-floating mb-3" style="padding-right: 20px;">
+                                <input type="text" class="form-control" class="floatingInput" name="txt13"
+                                    placeholder="Enter Skewness DMSNR Curve value">
+                                <label for="floatingInput" style="color: black;">Enter Thal</label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" mb-3>
+                            <button type="submit" name="submit" class="btn btn-outline-light btn-lg my-3"
+                                style="position: relative;">Predict</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <h4 style="color: rgb(255, 255, 255);">{{ result }}</h4>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <h4 style=" color: rgb(255, 255, 255); outline: invert;"> {{ Accuracy }}</h4>
+                        </th>
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
